@@ -1,4 +1,4 @@
-name: "sonar_cloud_scan_github_actions"
+name: "sonar_cloud_scan_github_actions"  #appname
 on:
   workflow_dispatch:
 
@@ -6,7 +6,7 @@ jobs:
   DemoSonarCloudSCan:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3  #after checkout scan happens
         with:
             fetch-depth: 0
       - name: SonarCloud Scan
@@ -16,6 +16,6 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-              -Dsonar.organization=rekhugopal
-              -Dsonar.projectKey=SonarCloudCodeAnalyisis
+              -Dsonar.organization=fidhan
+              -Dsonar.projectKey=sonartester
               -Dsonar.python.coverage.reportPaths=coverage.xml
