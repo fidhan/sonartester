@@ -5,7 +5,7 @@ import sys
 TOKEN= str(sys.argv[1])
 OWNER= str(sys.argv[2])
 REPO= str(sys.argv[3])
-workflowname= str(sys.argv[4])
+workflow_name= str(sys.argv[4])#deliberate
 parameter1= str(sys.argv[5])
 parameter2 = str(sys.argv[6])
 
