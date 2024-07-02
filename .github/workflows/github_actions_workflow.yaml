@@ -18,5 +18,4 @@ jobs:                             #jobs that will run as a part of workflow
           args: >
               -Dsonar.organization=fidhan
               -Dsonar.projectKey=sonartester
-              -Dsonar.python.coverage.reportPaths=coverage.xml
               
