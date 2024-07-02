@@ -9,6 +9,28 @@ workflow_name= str(sys.argv[4])#deliberate
 parameter1= str(sys.argv[5])
 parameter2 = str(sys.argv[6])
 unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
+unused_variable = "This variable is unused"
 
 print( "the token value is")
 def trigger_workflow(workflow_name,parameter1,parameter2):
