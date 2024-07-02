@@ -1,22 +1,38 @@
-name: "sonar_cloud_scan_github_actions"  #appname
+name: "sonar_cloud_scan_github_actions"
+
 on:
   workflow_dispatch:
 
-jobs:                             #jobs that will run as a part of workflow
-  DemoSonarCloudSCan:             #name of the job
+jobs:
+  DemoSonarCloudScan:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3  #after manual checkout scan happens
+      - name: Check out code
+        uses: actions/checkout@v3
         with:
-            fetch-depth: 0
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install pytest pytest-cov
+
+      - name: Run tests and generate coverage report
+        run: |
+          pytest --cov=my_project --cov-report=xml
+
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
-            GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-              -Dsonar.organization=fidhan
-              -Dsonar.projectKey=sonartester
-              -Dsonar.python.coverage.reportPaths=coverage.xml
-              
+            -Dsonar.organization=fidhan
+            -Dsonar.projectKey=sonartester
+            -Dsonar.python.coverage.reportPaths=coverage.xml
